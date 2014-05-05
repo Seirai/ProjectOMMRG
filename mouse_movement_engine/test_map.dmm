@@ -1,0 +1,26 @@
+"a" = (/turf/grass_tile,/area)
+"b" = (/turf/grass_dirt_left_tile,/area)
+"c" = (/turf/dirt_tile,/area)
+
+(1,1,1) = {"
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+aaaaaaaabccccccccccc
+"}
