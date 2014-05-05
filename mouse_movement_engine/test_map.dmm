@@ -1,26 +1,33 @@
 "a" = (/turf/grass_tile,/area)
-"b" = (/turf/grass_dirt_left_tile,/area)
-"c" = (/turf/dirt_tile,/area)
+"b" = (/turf/grass_dirt_topleft_tile,/area)
+"c" = (/turf/grass_dirt_top_tile,/area)
+"d" = (/turf/grass_dirt_topright_tile,/area)
+"e" = (/turf/grass_dirt_left_tile,/area)
+"f" = (/turf/dirt_tile,/area)
+"g" = (/turf/grass_dirt_right_tile,/area)
+"h" = (/turf/grass_dirt_bottomleft_tile,/area)
+"i" = (/turf/grass_dirt_bottom_tile,/area)
+"j" = (/turf/grass_dirt_bottomright_tile,/area)
 
 (1,1,1) = {"
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
-aaaaaaaabccccccccccc
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aabccdaabcccccdaaaaa
+aaeffgaaefffffgaaaaa
+aaeffgaaefffffgaaaaa
+aahiijaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaaefffffgaaaaa
+aaaaaaaahiiiiijaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
 "}

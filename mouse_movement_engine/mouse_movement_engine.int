@@ -1,8 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
+WINDOW: gfx\char_test.dmi;gfx\left_grassdirt.dmi;gfx\top_grassdirt.dmi;test_map.dmm;mouse_movement_engine.dm;mouse_movement_engine.dme;gfx\right_grassdirt.dmi;gfx\bottom_grassdirt.dmi;gfx\topleft_grassdirt.dmi;gfx\topright_grassdirt.dmi;gfx\bottomleft_grassdirt.dmi;gfx\bottomright_grassdirt.dmi
 LAST_COMPILE_VERSION: 504.1234
-LAST_COMPILE_TIME: 1399280669
+DIR: gfx 
+FILE: test_map.dmm
+LAST_COMPILE_TIME: 1399282209
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS
