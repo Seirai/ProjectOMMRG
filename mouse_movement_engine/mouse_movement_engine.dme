@@ -14,7 +14,11 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "mouse_movement_engine.dm"
+#include "00_Main.dm"
+#include "01_Movement.dm"
+#include "10_Mob.dm"
+#include "20_Object.dm"
+#include "30_Turf.dm"
+#include "40_Area.dm"
 #include "test_map.dmm"
 // END_INCLUDE
-

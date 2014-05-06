@@ -1,11 +1,19 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-WINDOW: gfx\char_test.dmi;gfx\left_grassdirt.dmi;gfx\top_grassdirt.dmi;test_map.dmm;mouse_movement_engine.dm;mouse_movement_engine.dme;gfx\right_grassdirt.dmi;gfx\bottom_grassdirt.dmi;gfx\topleft_grassdirt.dmi;gfx\topright_grassdirt.dmi;gfx\bottomleft_grassdirt.dmi;gfx\bottomright_grassdirt.dmi
+WINDOW: mouse_movement_engine.dme;00_Main.dm;01_Movement.dm;20_Object.dm;10_Mob.dm;30_Turf.dm
+PACKAGE_RSC_NAME: D:\Programming\Github_Local\NeedsNameLater\mouse_movement_engine\mouse_movement_engine_rsc.zip
 LAST_COMPILE_VERSION: 504.1234
-DIR: gfx 
-FILE: test_map.dmm
-LAST_COMPILE_TIME: 1399282209
+PACKAGE_DME_DEMO: 
+PACKAGE_TYPE: 0
+PACKAGE_DME_START: 
+DIR: gfx Lib 
+PACKAGE_DME_NAME: D:\Programming\Github_Local\NeedsNameLater\mouse_movement_engine\mouse_movement_engine_src.zip
+FILE: 01_Movement.dm
+PACKAGE_DME_INFO: 
+PACKAGE_DMB_NAME: D:\Programming\Github_Local\NeedsNameLater\mouse_movement_engine\mouse_movement_engine.zip
+LAST_COMPILE_TIME: 1399371742
+PACKAGE_DMB_INFO: 
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS
