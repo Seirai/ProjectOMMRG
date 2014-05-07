@@ -2,6 +2,8 @@
  *	Comment style bitches :)				*
  *											*/
 
+#define DEBUG 1
+
 world
 {
 	fps = 30		// 25 frames per second

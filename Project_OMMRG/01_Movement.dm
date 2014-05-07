@@ -17,6 +17,9 @@
 // moveLeft
 // moveRight
 // moveBack
+
+#define VERBOSE 1
+
 	///////////////////////
 	// MouseMove funcn's //
 	///////////////////////
@@ -32,7 +35,7 @@ atom
 	{
 		..();
 		usr.paramlist = params2list(params);
-		parseMouseLocation();
+		parseMouseLocation(location);
 	}
 
 // listParams() is for testing purposes only. It may be commented out once the system is completed.
@@ -40,7 +43,7 @@ atom
 	verb{
 		listParams(){
 			for(var/p in usr.paramlist){usr << "[p] = [usr.paramlist[p]]";}
-			usr << "mouseX = [usr.mouseX]\nmouseY = [usr.mouseY]\n quadrant =[usr.quadrant]\ntheta = [usr.theta]";
+			if(VERBOSE) usr << "mouseX = [usr.mouseX]\nmouseY = [usr.mouseY]\n quadrant =[usr.quadrant]\ntheta = [usr.theta]";
 		}
 	}
 
@@ -53,7 +56,7 @@ atom
 // mouse control parameters list into a string before changing it to an x,y coordinate held in two
 // numerical variables.
 
-		parseMouseLocation()
+		parseMouseLocation(atom/location)
 		{
 			var/paramlength = lentext(usr.paramlist["screen-loc"]);
 			var/separator = findtext(usr.paramlist["screen-loc"],",",1,paramlength);
@@ -68,6 +71,8 @@ atom
 			usr.mouseX = (tileX*32) + tilepixelX;
 			usr.mouseY = (tileY*32) + tilepixelY;
 
+			usr.mouse_turf = location;
+
 			calcTheta()
 		}
 
@@ -77,7 +82,7 @@ atom
 		{
 			var/center2mouseX = usr.mouseX - 224;
 			var/center2mouseY = usr.mouseY - 224;
-			usr << "center2mouseX = [center2mouseX]\ncenter2mouseY = [center2mouseY]"
+			if(VERBOSE) usr << "center2mouseX = [center2mouseX]\ncenter2mouseY = [center2mouseY]"
 			var/oavalue = center2mouseY/center2mouseX;
 			usr.theta = arccos(1/sqrt(1+oavalue*oavalue));
 			if(usr.theta<0)	{ usr.theta = usr.theta*-1; }
@@ -92,6 +97,17 @@ atom
 				usr.quadrant = 1;
 				usr.theta = 0;
 			}
+		}
+
+
+		// Rotate to Target
+		// Call this when you want the usr to rotate towards the pixel location of a target
+		// Input: None
+		// Output: None
+		rotateToTarget(atom/target){
+			var/matrix/M = matrix();
+			M.Turn(usr.theta);
+			src.transform = M;
 		}
 	}
 }
