@@ -22,6 +22,10 @@ Current agenda:
 - Levels/character progression and skill system. (This will most likely have a cap)
 - Party system.
 - Guilds/Village (?)
+- Saving/Loading characters.
+- NPC Dialog system
+- Communication system (I'd like to see some sort of overlay bubble text over mobs if psosible, but if not, we could just
+use the chatbox again)
 
 Completed:
 - Mouse Engine
