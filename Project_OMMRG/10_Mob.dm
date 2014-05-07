@@ -114,10 +114,33 @@ mob
 	//All the automated housekeeping stuff here.
 	New(){
 		..()
+		var/icon/I = icon(usr.icon);
+		usr.bound_width = I.Width();
+		usr.bound_height = I.Height();
+
 		spawn while(usr){
 			sleep(0.01);
 			//rotateToTarget(); //this is a joke, btw.
-			if(mouse_turf != null) usr.dir = get_dir(usr, mouse_turf);
+			//if(mouse_turf != null) usr.dir = get_dir(usr, mouse_turf);
+			usr.SetDirection();
 		}
+	}
+
+	proc{
+		SetDirection(){
+			//note to self: remove magic numbers
+			if(337.5 < usr.angle || usr.angle <= 22.5) usr.dir = EAST;
+			else if(22.5 < usr.angle && usr.angle <= 67.5) usr.dir = SOUTHEAST;
+			else if(67.5 < usr.angle && usr.angle <= 112.5) usr.dir = SOUTH;
+			else if(112.5 < usr.angle && usr.angle <= 157.5) usr.dir = SOUTHWEST;
+			else if(157.5 < usr.angle && usr.angle <= 202.5) usr.dir = WEST;
+			else if(202.5 < usr.angle && usr.angle <= 247.5) usr.dir = NORTHWEST;
+			else if(247.5 < usr.angle && usr.angle <= 292.5) usr.dir = NORTH;
+			else if(292.5 < usr.angle && usr.angle <= 337.5) usr.dir = NORTHEAST;
+		}
+	}
+
+	player{
+		icon = 'gfx/dgrayman.dmi';
 	}
 }

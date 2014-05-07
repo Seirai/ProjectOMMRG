@@ -1,19 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-<<<<<<< HEAD
-LAST_COMPILE_VERSION: 504.1234
-WINDOW: 00_Main.dm;01_Movement.dm;10_Mob.dm;20_Object.dm;30_Turf.dm;40_Area.dm;test_map.dmm;90 Math.dm;Macros.dms
-DIR: gfx 
-FILE: 01_Movement.dm
-LAST_COMPILE_TIME: 1399496578
-=======
 WINDOW: 00_Main.dm;01_Movement.dm;Macros.dms;10_Mob.dm;20_Object.dm;30_Turf.dm;40_Area.dm;test_map.dmm;gfx\char_test.dmi
 LAST_COMPILE_VERSION: 504.1234
 DIR: gfx 
 FILE: 10_Mob.dm
-LAST_COMPILE_TIME: 1399494257
->>>>>>> 1e2229c9f116bf00622cc2a68714b8f42ce1bfed
+LAST_COMPILE_TIME: 1399503445
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS

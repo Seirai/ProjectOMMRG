@@ -36,7 +36,7 @@ atom
 	{
 		..();
 		usr.paramlist = params2list(params);
-		parseMouseLocation(location);
+		parseMouseLocation();
 	}
 
 // listParams() is for testing purposes only. It may be commented out once the system is completed.
@@ -57,7 +57,7 @@ atom
 // mouse control parameters list into a string before changing it to an x,y coordinate held in two
 // numerical variables.
 
-		parseMouseLocation(atom/location)
+		parseMouseLocation()
 		{
 			var/paramlength = lentext(usr.paramlist["screen-loc"]);
 
@@ -75,8 +75,6 @@ atom
 
 			usr.mouseX = ((tileX-1)*TILESIZE) + tilepixelX;
 			usr.mouseY = ((tileY-1)*TILESIZE) + tilepixelY;
-
-			usr.mouse_turf = location;
 
 			calcTheta()
 		}
