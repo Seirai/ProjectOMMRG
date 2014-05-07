@@ -1,0 +1,12 @@
+/*	Movement Engine Test: OMMRG	*
+ *	Comment style bitches :)	*
+ *	02_Macros.dms				*
+ *	Macro Definition.			*/
+
+macro
+/*
+	w return "moveUp"
+	a return "moveLeft"
+	s return "moveDown"
+	d return "moveRight"
+*/

@@ -1,6 +1,6 @@
-/*	Movement Engine Test: OMMRG	*
- *	Comment style bitches :)	*
- *								*/
+/*	 Project OMMRG							*
+ *	Comment style bitches :)				*
+ *											*/
 
 world
 {

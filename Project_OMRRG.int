@@ -1,0 +1,8 @@
+// BEGIN_INTERNALS
+/*
+MAP_ICON_TYPE: 0
+WINDOW: 00_Main.dm;01_Movement.dm;02_Macros.dms;10_Mob.dm;20_Object.dm;30_Turf.dm;40_Area.dm;test_map.dmm
+FILE: test_map.dmm
+AUTO_FILE_DIR: ON
+*/
+// END_INTERNALS
