@@ -1,0 +1,21 @@
+Project OMMRG
+Contributors:
+Coders - Ysengrin, Seirai
+Artists - Doomulus, Seirai
+Music - Mark, Ysengrin
+Organizer - Mark
+
+
+Current agenda:
+- Procedural Animation, a basic sprite-sheet generator given Doom's templates.
+- Inventory, basic inventory system for players.
+- Combat system, will be drafted out idea-wise.
+- Tile/resource system
+- Crafting system
+- Building system
+- Monsters
+
+Completed:
+- Mouse Engine
+- Basic tiles
+- Basic sprite
