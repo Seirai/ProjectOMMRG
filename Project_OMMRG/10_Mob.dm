@@ -14,6 +14,7 @@ mob
 		quadrant; //The quadrant for the mob angle to face
 		controlscheme; //Boolean value for which control scheme the user wants.
 		mouse_turf as turf; //the turf that the mouse is on, used to help determin direction
+		angle as num;
 	}
 
 /*	End Definition		*/
@@ -79,6 +80,33 @@ mob
 		roleplay(M as message){
 			M = "<font color=red>" + M + "\n([usr.key])";
 			view() << M;
+		}
+
+		//swap_icon
+		//take in the name of an icon, swap to it
+		//input: T as text
+		//output: none
+		swap_icon(T as icon){
+			usr.icon = T;
+			usr.icon_state = "walk";
+		}
+
+		//test verb for projectiles, may or may not keep
+		shoot(){
+			var/obj/projectile/B = new /obj/projectile;
+			B.icon = 'fireball.dmi';
+
+			var/matrix/M = matrix();
+			M.Turn(usr.angle);
+			B.angle = usr.angle;
+			B.transform = M;
+
+			var/icon/I = icon(usr.icon);
+
+			var/w = I.Width();
+			var/h = I.Height();
+
+			B.Move(usr.loc,0,usr.step_x + (w/2),usr.step_y + (h/2));
 		}
 
 //	Other verbs here.

@@ -20,6 +20,7 @@
 #include "20_Object.dm"
 #include "30_Turf.dm"
 #include "40_Area.dm"
+#include "90 Math.dm"
 #include "test_map.dmm"
 #include "Macros.dms"
 // END_INCLUDE

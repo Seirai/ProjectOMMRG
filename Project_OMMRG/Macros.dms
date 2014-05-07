@@ -4,9 +4,9 @@
  *	Macro Definition.			*/
 
 macro
-/*
+
 	w return "moveUp"
 	a return "moveLeft"
 	s return "moveDown"
 	d return "moveRight"
-*/
+	q return "shoot"

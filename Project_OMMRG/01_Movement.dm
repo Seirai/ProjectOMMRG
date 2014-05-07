@@ -19,6 +19,7 @@
 // moveBack
 
 #define VERBOSE 1
+#define TILESIZE 32
 
 	///////////////////////
 	// MouseMove funcn's //
@@ -59,17 +60,21 @@ atom
 		parseMouseLocation(atom/location)
 		{
 			var/paramlength = lentext(usr.paramlist["screen-loc"]);
+
 			var/separator = findtext(usr.paramlist["screen-loc"],",",1,paramlength);
 			var/x_half = copytext(usr.paramlist["screen-loc"],1,separator);
 			var/y_half = copytext(usr.paramlist["screen-loc"],separator+1,0);
+
 			separator = findtext(x_half,":",1,0);
 			var/tilepixelX = text2num(copytext(x_half,separator+1,0));
 			var/tileX = text2num(copytext(x_half,1,separator));
+
 			separator = findtext(y_half,":",1,0);
 			var/tilepixelY = text2num(copytext(y_half,separator+1,0));
 			var/tileY = text2num(copytext(y_half,1,separator));
-			usr.mouseX = (tileX*32) + tilepixelX;
-			usr.mouseY = (tileY*32) + tilepixelY;
+
+			usr.mouseX = ((tileX-1)*TILESIZE) + tilepixelX;
+			usr.mouseY = ((tileY-1)*TILESIZE) + tilepixelY;
 
 			usr.mouse_turf = location;
 
@@ -89,15 +94,22 @@ atom
 			if(usr.theta<0)	{ usr.theta = usr.theta*-1; }
 
 
-			if(center2mouseX>=0 && center2mouseY >=0) {usr.quadrant = 1; }
-			else if(center2mouseX<0 && center2mouseY >= 0) {usr.quadrant = 2; }
-			else if(center2mouseX<0 && center2mouseY < 0 ) {usr.quadrant = 3; }
-			else if(center2mouseX>=0 && center2mouseY < 0) { usr.quadrant = 4;}
+			if(center2mouseX>=0 && center2mouseY >=0) {usr.quadrant = 1; usr.angle = 360 - usr.theta; }
+			else if(center2mouseX<0 && center2mouseY >= 0) {usr.quadrant = 2; usr.angle = 180 + usr.theta; }
+			else if(center2mouseX<0 && center2mouseY < 0 ) {usr.quadrant = 3; usr.angle = 180 - usr.theta; }
+			else if(center2mouseX>=0 && center2mouseY < 0) { usr.quadrant = 4; usr.angle = usr.theta; }
 			else
 			{
 				usr.quadrant = 1;
 				usr.theta = 0;
 			}
+			if(VERBOSE) usr << "usr.angle = [usr.angle]";
+			/*
+			usr.angle = usr.theta;
+			usr.angle = -usr.theta;
+			usr.angle = 180 - usr.theta;
+			usr.angle = 180 + usr.theta;
+			*/
 		}
 
 
@@ -109,6 +121,18 @@ atom
 			var/matrix/M = matrix();
 			M.Turn(usr.theta);
 			src.transform = M;
+		}
+
+		// Parse Location
+		// Gets the center of the mob's bounding box, in pixels
+		// Input: None
+		// Output: int list of pixel location, ordered xy[1] = x, xy[2] = y
+		parseLocation(){
+			var/list/xy[2];
+			xy[1] = ((usr.x-1)*world.icon_size) + usr.step_x + usr.bound_width/2;
+			xy[2] = ((usr.y-1)*world.icon_size) + usr.step_y + usr.bound_height/2;
+			if(VERBOSE) usr << "xy[1] = [xy[1]]\nxy[2] = [xy[2]]"
+			return xy;
 		}
 	}
 }
