@@ -77,7 +77,7 @@ mob
 		//output: none
 		//to-do: save messages into log system
 		roleplay(M as message){
-			M = "<font color=red>" + M + "\n([usr.key])";
+			M = "<font color=red face=garamond><b>" + M + "\n([usr.key])</font></b>";
 			view() << M;
 		}
 
