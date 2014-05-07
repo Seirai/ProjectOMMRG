@@ -104,12 +104,6 @@ atom
 				usr.theta = 0;
 			}
 			if(VERBOSE) usr << "usr.angle = [usr.angle]";
-			/*
-			usr.angle = usr.theta;
-			usr.angle = -usr.theta;
-			usr.angle = 180 - usr.theta;
-			usr.angle = 180 + usr.theta;
-			*/
 		}
 
 
