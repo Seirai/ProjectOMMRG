@@ -5,6 +5,10 @@ Artists - Doomulus, Seirai
 Music - Mark, Ysengrin
 Organizer - Mark
 
+Keep in mind we're trying our best to keep the code clean and modular so that we can add and remove things easily in case
+we need to renovate anything in the future. :)
+
+GL HF
 
 Current agenda:
 - Procedural Animation, a basic sprite-sheet generator given Doom's templates.
@@ -14,6 +18,10 @@ Current agenda:
 - Crafting system
 - Building system
 - Monsters
+- STP (Supple Treat Point) system-- essentially admin reward system for roleplay/writing.
+- Levels/character progression and skill system. (This will most likely have a cap)
+- Party system.
+- Guilds/Village (?)
 
 Completed:
 - Mouse Engine
