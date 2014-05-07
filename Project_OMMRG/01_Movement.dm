@@ -83,6 +83,7 @@ atom
 			var/center2mouseX = usr.mouseX - 224;
 			var/center2mouseY = usr.mouseY - 224;
 			if(VERBOSE) usr << "center2mouseX = [center2mouseX]\ncenter2mouseY = [center2mouseY]"
+			if(center2mouseX == 0) center2mouseX = 1; //fix up divide by zero bug when mouse is on the x=0 axis
 			var/oavalue = center2mouseY/center2mouseX;
 			usr.theta = arccos(1/sqrt(1+oavalue*oavalue));
 			if(usr.theta<0)	{ usr.theta = usr.theta*-1; }

@@ -22,3 +22,10 @@ obj
 {
 	step_size = 8;
 }
+
+client{
+
+	script = 'Macros.dms';
+
+	macro_mode = 1;  //1 = keys are by default assumed to be macros
+}
