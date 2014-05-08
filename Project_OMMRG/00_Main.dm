@@ -33,7 +33,7 @@ client{
 
 	macro_mode = 1;  //1 = keys are by default assumed to be macros
 
-	Click(atom/object, atom/location, var/control, var/para,s){
+	MouseDown(atom/object, atom/location, var/control, var/params){
 		..();
 		spawn usr.shoot();
 	}

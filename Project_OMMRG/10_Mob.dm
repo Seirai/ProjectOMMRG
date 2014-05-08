@@ -23,7 +23,7 @@ mob
 	Login()
 	{
 		..();
-		input("Select movement system:", "Enter in 1 for the new system, enter 0 for the old.", usr.controlscheme);
+		//input("Select movement system:", "Enter in 1 for the new system, enter 0 for the old.", usr.controlscheme);
 	}
 
 /*	End Login			*/
@@ -41,36 +41,6 @@ mob
 	verb
 	{
 		mobStuff()
-
-	// This segment is affiliated with movement! --01_Movement.dm--
-	/*
-	w return "moveUp"
-	a return "moveLeft"
-	s return "moveDown"
-	d return "moveRight"
-	*/
-
-		//Each of these basically call the same proc as the arrow keys.
-		moveUp()
-		{
-			set hidden = 1;
-			spawn client.North();
-		}
-		moveLeft()
-		{
-			set hidden = 1;
-			spawn client.West();
-		}
-		moveDown()
-		{
-			set hidden = 1;
-			spawn client.South();
-		}
-		moveRight()
-		{
-			set hidden = 1;
-			spawn client.East();
-		}
 
 		//swap_icon
 		//take in the name of an icon, swap to it
@@ -144,6 +114,37 @@ mob
 		}
 
 		verb{
+
+			// This segment is affiliated with movement! --01_Movement.dm--
+			/*
+			w return "moveUp"
+			a return "moveLeft"
+			s return "moveDown"
+			d return "moveRight"
+			*/
+
+			//Each of these basically call the same proc as the arrow keys.
+			moveUp()
+			{
+				set hidden = 1;
+				client.North();
+			}
+			moveLeft()
+			{
+				set hidden = 1;
+				client.West();
+			}
+			moveDown()
+			{
+				set hidden = 1;
+				client.South();
+			}
+			moveRight()
+			{
+				set hidden = 1;
+				client.East();
+			}
+
 			//roleplay
 			//take in some html text and spew it out into the output box
 			//input: M as message

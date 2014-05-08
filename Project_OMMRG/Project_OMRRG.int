@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-WINDOW: 00_Main.dm;01_Movement.dm;10_Mob.dm;20_Object.dm;30_Turf.dm;40_Area.dm
+WINDOW: 00_Main.dm;01_Movement.dm;10_Mob.dm;20_Object.dm;30_Turf.dm;40_Area.dm;Macros.dms
 LAST_COMPILE_VERSION: 504.1234
 DIR: gfx 
-FILE: 10_Mob.dm
-LAST_COMPILE_TIME: 1399520976
+FILE: Macros.dms
+LAST_COMPILE_TIME: 1399583239
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS
