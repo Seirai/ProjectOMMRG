@@ -72,16 +72,6 @@ mob
 			spawn client.East();
 		}
 
-		//roleplay
-		//take in some html text and spew it out into the output box
-		//input: M as message
-		//output: none
-		//to-do: save messages into log system
-		roleplay(M as message){
-			M = "<font color=red face=garamond><b>" + M + "\n([usr.key])</font></b>";
-			view() << M;
-		}
-
 		//swap_icon
 		//take in the name of an icon, swap to it
 		//input: T as text
@@ -114,16 +104,6 @@ mob
 	//All the automated housekeeping stuff here.
 	New(){
 		..()
-		var/icon/I = icon(usr.icon);
-		usr.bound_width = I.Width();
-		usr.bound_height = I.Height();
-
-		spawn while(usr){
-			sleep(0.01);
-			//rotateToTarget(); //this is a joke, btw.
-			//if(mouse_turf != null) usr.dir = get_dir(usr, mouse_turf);
-			usr.SetDirection();
-		}
 	}
 
 	proc{
@@ -142,5 +122,50 @@ mob
 
 	player{
 		icon = 'gfx/dgrayman.dmi';
+
+		overlays = newlist();
+
+		var{
+			rping = 0;
+		}
+
+		New(){
+			..()
+			var/icon/I = icon(usr.icon);
+			usr.bound_width = I.Width();
+			usr.bound_height = I.Height();
+
+			spawn while(usr){
+				sleep(0.01);
+				//rotateToTarget(); //this is a joke, btw.
+				//if(mouse_turf != null) usr.dir = get_dir(usr, mouse_turf);
+				usr.SetDirection();
+			}
+		}
+
+		verb{
+			//roleplay
+			//take in some html text and spew it out into the output box
+			//input: M as message
+			//output: none
+			//to-do: save messages into log system
+			roleplay(){
+				src.rping = 1;
+				src.overlays.Add(icon('rp_indicator.dmi'));
+				var/M = input(src,"Type your roleplay here (HTML enabled).") as message;
+				if(M != ""){
+					M = "<font color=red face=garamond><b>" + M + "\n([usr.name])</font></b>";
+					logs[src.key] += (M);
+					view() << M;
+				}
+				src.rping = 0;
+				src.overlays.Remove(icon('rp_indicator.dmi'));
+			}
+
+			show_logs(){
+				var/review = input(src, "Pick log to read") in logs;
+				usr << logs[review];
+			}
+		}
 	}
 }

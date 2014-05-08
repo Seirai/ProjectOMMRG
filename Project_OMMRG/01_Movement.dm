@@ -111,7 +111,7 @@ atom
 		// Output: None
 		rotateToTarget(atom/target){
 			var/matrix/M = matrix();
-			M.Turn(usr.theta);
+			M.Turn(usr.angle);
 			src.transform = M;
 		}
 
