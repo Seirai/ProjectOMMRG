@@ -35,6 +35,6 @@ client{
 
 	MouseDown(atom/object, atom/location, var/control, var/params){
 		..();
-		spawn usr.shoot();
+		spawn usr.left_click_power.use();
 	}
 }

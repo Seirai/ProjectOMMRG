@@ -9,4 +9,3 @@ macro
 	a return "moveLeft"
 	s return "moveDown"
 	d return "moveRight"
-	q return "shoot"

@@ -15,6 +15,8 @@ mob
 		controlscheme; //Boolean value for which control scheme the user wants.
 		mouse_turf as turf; //the turf that the mouse is on, used to help determin direction
 		angle as num;
+		list/obj/powers/power_inventory as obj;  //all the powers the user has
+		obj/powers/left_click_power as obj; //the power currently bound to the left click
 	}
 
 /*	End Definition		*/
@@ -53,20 +55,7 @@ mob
 
 		//test verb for projectiles, may or may not keep
 		shoot(){
-			var/obj/projectile/B = new /obj/projectile;
-			B.icon = 'fireball.dmi';
 
-			var/matrix/M = matrix();
-			M.Turn(usr.angle);
-			B.angle = usr.angle;
-			B.transform = M;
-
-			var/icon/I = icon(usr.icon);
-
-			var/w = I.Width();
-			var/h = I.Height();
-
-			B.Move(usr.loc,0,usr.step_x + (w/2),usr.step_y + (h/2));
 		}
 
 //	Other verbs here.
@@ -104,6 +93,7 @@ mob
 			var/icon/I = icon(usr.icon);
 			usr.bound_width = I.Width();
 			usr.bound_height = I.Height();
+			left_click_power = new /obj/powers/range/sample_power; //when initializing, put the power here
 
 			spawn while(usr){
 				sleep(0.01);

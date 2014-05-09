@@ -18,6 +18,7 @@
 #include "01_Movement.dm"
 #include "10_Mob.dm"
 #include "20_Object.dm"
+#include "25_Powers.dm"
 #include "30_Turf.dm"
 #include "40_Area.dm"
 #include "90 Math.dm"
