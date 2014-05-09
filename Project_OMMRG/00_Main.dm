@@ -14,6 +14,8 @@ world
 	mob = /mob/player;
 
 	/var/list/logs[0];
+
+	map_format = TOPDOWN_MAP;
 }
 
 // Make objects move 8 pixels per tick when walking
@@ -33,8 +35,51 @@ client{
 
 	macro_mode = 1;  //1 = keys are by default assumed to be macros
 
-	MouseDown(atom/object, atom/location, var/control, var/params){
+	show_popup_menus = 0;
+
+	MouseDown(object,location,control,params){
+		params=params2list(params);
+		if(params["left"]) spawn usr.left_click_power.use();
+		else if(params["right"]) spawn usr.right_click_power.use();
+	}
+
+	North(){
+		usr.moving_direction = NORTH;
 		..();
-		spawn usr.left_click_power.use();
+	}
+
+	Northeast(){
+		usr.moving_direction = NORTHEAST;
+		..();
+	}
+
+	East(){
+		usr.moving_direction = EAST;
+		..();
+	}
+
+	Southeast(){
+		usr.moving_direction = SOUTHEAST;
+		..();
+	}
+
+	South(){
+		usr.moving_direction = SOUTH;
+		..();
+	}
+
+	Southwest(){
+		usr.moving_direction = SOUTHWEST;
+		..();
+	}
+
+	West(){
+		usr.moving_direction = WEST;
+		..();
+	}
+
+	Northwest(){
+		usr.moving_direction = NORTHWEST;
+		..();
 	}
 }

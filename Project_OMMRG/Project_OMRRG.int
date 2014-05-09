@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-WINDOW: 00_Main.dm;01_Movement.dm;10_Mob.dm;20_Object.dm;30_Turf.dm;40_Area.dm;Macros.dms;25_Powers.dm;gfx\dgrayman.dmi
+WINDOW: 00_Main.dm;01_Movement.dm;10_Mob.dm;20_Object.dm;30_Turf.dm;40_Area.dm;25_Powers.dm;gfx\dgrayman.dmi
 LAST_COMPILE_VERSION: 504.1234
 DIR: gfx 
-FILE: gfx\dgrayman.dmi
-LAST_COMPILE_TIME: 1399611319
+FILE: 25_Powers.dm
+LAST_COMPILE_TIME: 1399615660
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS

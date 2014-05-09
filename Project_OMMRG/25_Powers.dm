@@ -66,5 +66,27 @@ obj{
 				}
 			}
 		}
+
+		//A template for movement powers
+		movement{
+
+			dash{
+				use(){
+					usr.icon_state = "dash";
+					var/turf/current = get_step(usr,usr.moving_direction);
+					current = get_step(current,usr.moving_direction);
+					current = get_step(current,usr.moving_direction);
+					current = get_step(current,usr.moving_direction);
+					current = get_step(current,usr.moving_direction);
+					current = get_step(current,usr.moving_direction);
+					current = get_step(current,usr.moving_direction);
+					current = get_step(current,usr.moving_direction);
+
+					walk_to(usr,current,0,0,32);
+					sleep(5);
+					usr.icon_state = "walk";
+				}
+			}
+		}
 	}
 }

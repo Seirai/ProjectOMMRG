@@ -17,6 +17,8 @@ mob
 		angle as num;
 		list/obj/powers/power_inventory as obj;  //all the powers the user has
 		obj/powers/left_click_power as obj; //the power currently bound to the left click
+		obj/powers/right_click_power as obj; //the power currently bound to the right click
+		moving_direction = NORTH;  //the direction of movement instead of the direction of aiming
 	}
 
 /*	End Definition		*/
@@ -94,6 +96,7 @@ mob
 			usr.bound_width = I.Width();
 			usr.bound_height = I.Height();
 			left_click_power = new /obj/powers/range/sample_power; //when initializing, put the power here
+			right_click_power = new /obj/powers/movement/dash;
 
 			spawn while(usr){
 				sleep(0.01);
@@ -102,6 +105,7 @@ mob
 				usr.SetDirection();
 			}
 		}
+
 
 		verb{
 
