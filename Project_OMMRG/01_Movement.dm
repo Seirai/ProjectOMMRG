@@ -18,7 +18,7 @@
 // moveRight
 // moveBack
 
-#define VERBOSE 1
+#define VERBOSE 0
 #define TILESIZE 32
 
 	///////////////////////

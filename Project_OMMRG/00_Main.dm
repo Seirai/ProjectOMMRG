@@ -2,7 +2,7 @@
  *	Comment style bitches :)				*
  *											*/
 
-#define DEBUG 1
+#define DEBUG 0
 
 world
 {
@@ -38,11 +38,27 @@ client{
 	show_popup_menus = 0;
 
 	MouseDown(object,location,control,params){
+		//first, collect the parameters from our mouse so we know what is going on
 		params=params2list(params);
-		if(params["left"]) spawn usr.left_click_power.use();
-		else if(params["right"]) spawn usr.right_click_power.use();
+
+		if(params["left"]){ //if we are left clicking...
+			//use the power bound to the left mouse button
+			spawn usr.left_click_power.use();
+		}else if(params["right"]){
+			//if we are right clicking on a player then retrieve their description
+			if(istype(object, /mob/player)){
+				//have to cast the usr to a player mob, so we know that it has the right verbs
+				var/mob/player/P = src.mob;
+				P.show_description(object);
+			}
+			else{ //otherwise, use the power bound to our right button
+				spawn usr.right_click_power.use();
+			}
+		}
 	}
 
+	//We're redefining the core proc for movemnt, so that they will provide a moving direction
+	//seperate from the aiming direction, which will be used for movement based powers
 	North(){
 		usr.moving_direction = NORTH;
 		..();

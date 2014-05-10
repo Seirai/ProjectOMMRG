@@ -8,21 +8,27 @@
 // BEGIN_FILE_DIR
 #define FILE_DIR .
 #define FILE_DIR "gfx"
+#define FILE_DIR "lib"
+#define FILE_DIR "lib/deadron"
+#define FILE_DIR "lib/deadron/test"
+#define FILE_DIR "lib/deadron/test/demo"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
-#define DEBUG
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
 #include "00_Main.dm"
 #include "01_Movement.dm"
 #include "10_Mob.dm"
+#include "11_Player.dm"
 #include "20_Object.dm"
 #include "25_Powers.dm"
 #include "30_Turf.dm"
 #include "40_Area.dm"
-#include "90 Math.dm"
 #include "test_map.dmm"
 #include "Macros.dms"
+#include "lib\deadron\test\Test.dm"
+#include "lib\deadron\texthandling\TextHandling.dm"
+#include "lib\ysengrin\Math\Math.dm"
 // END_INCLUDE
