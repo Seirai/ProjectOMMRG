@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-WINDOW: 00_Main.dm;gfx\right_grassdirt.dmi;40_Area.dm;test_map.dmm;30_Turf.dm;25_Powers.dm;01_Movement.dm;10_Mob.dm;11_Player.dm;20_Object.dm;lib\deadron\test\Test.dm;gfx\topright_grassdirt.dmi;Project_OMRRG.dme;lib\deadron\texthandling\TextHandling.dm
-LAST_COMPILE_VERSION: 504.1234
+WINDOW: 00_Main.dm;40_Area.dm;test_map.dmm;30_Turf.dm;25_Powers.dm;01_Movement.dm;10_Mob.dm;11_Player.dm;20_Object.dm;lib\deadron\test\Test.dm;gfx\topright_grassdirt.dmi;Project_OMRRG.dme;lib\deadron\texthandling\TextHandling.dm
+LAST_COMPILE_VERSION: 506.1241
 DIR: gfx lib lib\deadron lib\deadron\test lib\deadron\texthandling lib\ysengrin lib\ysengrin\Math 
 FILE: 25_Powers.dm
-LAST_COMPILE_TIME: 1399840544
+LAST_COMPILE_TIME: 1400048317
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS

@@ -15,8 +15,8 @@ mob{
 			usr.bound_width = I.Width();
 			usr.bound_height = I.Height();
 			left_click_power = new /obj/powers/range/sample_power; //when initializing, put the power here
-			right_click_power = new /obj/powers/movement/dash;
-
+			//right_click_power = new /obj/powers/movement/dash;
+			right_click_power = new /obj/powers/movement/blink;
 			spawn while(usr){
 				sleep(0.01);
 				//rotateToTarget(); //this is a joke, btw.

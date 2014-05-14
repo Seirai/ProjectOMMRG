@@ -92,6 +92,8 @@ obj{
 				use(){
 					usr.icon_state = "blink";
 					usr.loc = usr.mouseTurf;
+					sleep(1);
+					usr.icon_state = "walk";
 					}
 			}
 		}
