@@ -102,7 +102,16 @@ obj{
 					walk_to(usr,current,0,0,32);
 					sleep(5);
 					usr.icon_state = "walk";
+					}
 				}
+			//Seirai's desperate attempt at making blink :)
+			blink{
+				use(){
+					usr.icon_state = "blink";
+					usr.loc = usr.mouseTurf;
+					sleep(1);
+					usr.icon_state = "walk";
+					}
 			}
 		}
 

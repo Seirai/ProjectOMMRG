@@ -8,6 +8,7 @@ mob
 
 	//	--01_MovementVars--
 		paramlist; //This holds parameters from the MouseMove() proc for the mob.
+		mouseTurf; //The turf where the mouse is
 		mouseX; //Mouse x/y coordinate holders.
 		mouseY;
 		theta; //Mob angle

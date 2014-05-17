@@ -37,6 +37,7 @@ atom
 	{
 		..();
 		usr.paramlist = params2list(params);
+		usr.mouseTurf = location;
 		parseMouseLocation();
 	}
 
