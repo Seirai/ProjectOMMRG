@@ -14,12 +14,23 @@ mob
 		quadrant; //The quadrant for the mob angle to face
 		controlscheme; //Boolean value for which control scheme the user wants.
 		mouse_turf as turf; //the turf that the mouse is on, used to help determin direction
-		angle as num;
+
 		list/obj/powers/power_inventory as obj;  //all the powers the user has
+		list/obj/powers/equipped_powers as obj;  //Powers they currently have access to
 		obj/powers/left_click_power as obj; //the power currently bound to the left click
 		obj/powers/right_click_power as obj; //the power currently bound to the right click
 		moving_direction = NORTH;  //the direction of movement instead of the direction of aiming
+		target as mob;  //current target based on mouse click
+
+		list/has_a_pixel_x;
+
+		/*
+			Stat Variables
+		*/
+		vitality as num;
+
 	}
+
 
 /*	End Definition		*/
 /*	Login Proc			*/
@@ -64,8 +75,27 @@ mob
 	}
 	//All the automated housekeeping stuff here.
 	New(){
-		..()
+		..();
+
+		spawn while(src){
+			sleep(0.01);
+			src.CycleThroughPassives();
+		}
 	}
+
+	//Collision handling
+	Crossed(object){
+		if(VERBOSE) view() << "[object] is crossing [src]";
+		if(VERBOSE) view() << object;
+		if(istype(object, /obj/effects)){
+			var/obj/effects/E = object;
+			if(VERBOSE) view() << "[object], an effect, is applying to [src]";
+			E.applyEffect(src);
+		}
+
+		return ..();
+	}
+
 
 	proc{
 		SetDirection(){
@@ -79,7 +109,15 @@ mob
 			else if(247.5 < usr.angle && usr.angle <= 292.5) usr.dir = NORTH;
 			else if(292.5 < usr.angle && usr.angle <= 337.5) usr.dir = NORTHEAST;
 		}
+
+		CycleThroughPassives(){
+			for(var/obj/powers/i in usr.equipped_powers){
+				i.passive();
+			}
+		}
+
 	}
+
 
 
 }

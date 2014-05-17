@@ -21,46 +21,63 @@ obj{
 			use(){
 				set src in usr;
 			}
+
+			//What the power does when on the menu but doesn't need clicking
+			passive(){
+				set src in usr;
+			}
 		}
 
 		//Procs for ALL powers
-		proc{
+		//proc{
 
-			//fire projectile
-			//creates a projectile, assigns it some values based on the creator, and gives it
-			//an expiration
-			//input: creator, range, projectile type (in future)
-			//output: none
-
-			FireProjectile(mob/creator as mob, range as num){
-				//Still a little hardcoded
-				var/obj/projectile/B = new /obj/projectile;
-				B.range = range;
-				B.icon = 'fireball.dmi';
-
-				var/matrix/M = matrix();
-				M.Turn(creator.angle);
-				B.angle = creator.angle;
-				B.transform = M;
-
-				var/icon/I = icon(creator.icon);
-
-				var/w = I.Width();
-				var/h = I.Height();
-
-				B.Move(creator.loc,0,creator.step_x + (w/2),creator.step_y + (h/2));
-			}
-		}
+		//}
 
 		//A template for ranged powers
 		range{
 			var{
 				range = 10;
+				projectile as obj;
+			}
+
+			proc{
+				//fire projectile
+				//creates a projectile, assigns it some values based on the creator, and gives it
+				//an expiration
+				//input: creator, range, projectile type (in future)
+				//output: none
+
+				FireProjectile(mob/creator as mob, range as num){
+					//Still a little hardcoded
+					var/obj/effects/B = new projectile;
+					B.range = range;
+					B.creator = usr;
+					B.icon = 'fireball.dmi';
+
+					var/matrix/M = matrix();
+					M.Turn(creator.angle);
+					B.angle = creator.angle;
+					B.transform = M;
+
+					var/icon/I = icon(creator.icon);
+
+					var/w = I.Width();
+					var/h = I.Height();
+
+					I = icon(B.icon);
+
+					var/w2 = I.Width();
+					var/h2 = I.Height();
+
+					B.Move(creator.loc,0,creator.step_x + (w/2 - w2/2),creator.step_y + (h/2 - h2/2));
+				}
 			}
 
 
 			//A very very basic example of how a power might work
 			sample_power{
+				projectile = /obj:damage_projectile;
+
 				use(){
 					FireProjectile(usr, range);
 				}
@@ -86,6 +103,13 @@ obj{
 					sleep(5);
 					usr.icon_state = "walk";
 				}
+			}
+		}
+
+		//Here are just some interesting powers
+		imitate_form{
+			use(mob/M as mob){
+				usr.swap_icon(M);
 			}
 		}
 	}

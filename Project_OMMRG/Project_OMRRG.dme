@@ -23,6 +23,7 @@
 #include "10_Mob.dm"
 #include "11_Player.dm"
 #include "20_Object.dm"
+#include "21_Effects.dm"
 #include "25_Powers.dm"
 #include "30_Turf.dm"
 #include "40_Area.dm"

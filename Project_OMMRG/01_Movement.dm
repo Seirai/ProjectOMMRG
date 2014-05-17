@@ -18,8 +18,9 @@
 // moveRight
 // moveBack
 
-#define VERBOSE 0
-#define TILESIZE 32
+#define MOUSEOFFSETX 12
+#define MOUSEOFFSETY 0
+
 
 	///////////////////////
 	// MouseMove funcn's //
@@ -73,8 +74,8 @@ atom
 			var/tilepixelY = text2num(copytext(y_half,separator+1,0));
 			var/tileY = text2num(copytext(y_half,1,separator));
 
-			usr.mouseX = ((tileX-1)*TILESIZE) + tilepixelX;
-			usr.mouseY = ((tileY-1)*TILESIZE) + tilepixelY;
+			usr.mouseX = ((tileX-1)*TILESIZE) + tilepixelX + MOUSEOFFSETX;
+			usr.mouseY = ((tileY-1)*TILESIZE) + tilepixelY + MOUSEOFFSETY;
 
 			calcTheta()
 		}

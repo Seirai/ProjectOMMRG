@@ -3,19 +3,27 @@
  *											*/
 
 #define DEBUG 0
+#define VERBOSE 1
+#define TILESIZE 32
 
 world
 {
 	fps = 30		// 25 frames per second
 	icon_size = 32	// 32x32 icon size by default
 
-	view = 6		// show up to 6 tiles outward from center (13x13 view)
+	view = 16		// show up to 6 tiles outward from center (13x13 view)
 
 	mob = /mob/player;
 
 	/var/list/logs[0];
 
 	map_format = TOPDOWN_MAP;
+
+}
+
+atom/movable/var/angle as num; //all moving things get an angle
+
+proc{
 }
 
 // Make objects move 8 pixels per tick when walking
@@ -54,6 +62,13 @@ client{
 			else{ //otherwise, use the power bound to our right button
 				spawn usr.right_click_power.use();
 			}
+		}
+	}
+
+	Click(object,location,control,params){
+		if(istype(object, /mob)){
+			var/mob/player/P = src.mob;
+			P.target = object;
 		}
 	}
 

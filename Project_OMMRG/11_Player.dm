@@ -11,17 +11,16 @@ mob{
 
 		New(){
 			..()
-			var/icon/I = icon(usr.icon);
-			usr.bound_width = I.Width();
-			usr.bound_height = I.Height();
 			left_click_power = new /obj/powers/range/sample_power; //when initializing, put the power here
 			right_click_power = new /obj/powers/movement/dash;
+			vitality = 10;
 
 			spawn while(usr){
 				sleep(0.01);
 				//rotateToTarget(); //this is a joke, btw.
 				//if(mouse_turf != null) usr.dir = get_dir(usr, mouse_turf);
 				usr.SetDirection();
+				usr.CycleThroughPassives()
 			}
 		}
 
