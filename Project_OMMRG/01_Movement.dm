@@ -25,7 +25,7 @@
 	///////////////////////
 	// MouseMove funcn's //
 	///////////////////////
-atom
+client
 {
 // MouseMove(atom/location,control,params) is a predefined proc which is called whenever
 // the mouse is moved.
@@ -33,7 +33,7 @@ atom
 // This is adding upon the default proc a chunk to take the paramaeters of the Mouse
 // pertaining the current user to place it within a list for further manipulation.
 
-	MouseMove(atom/location, control, params)
+	MouseMove(object, atom/location, control, params)
 	{
 		..();
 		usr.paramlist = params2list(params);
@@ -114,7 +114,7 @@ atom
 		rotateToTarget(atom/target){
 			var/matrix/M = matrix();
 			M.Turn(usr.angle);
-			src.transform = M;
+			usr.transform = M;
 		}
 
 		// Parse Location

@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-WINDOW: 00_Main.dm;10_Mob.dm;11_Player.dm;21_Effects.dm;25_Powers.dm;test_map.dmm
+WINDOW: 00_Main.dm;10_Mob.dm;11_Player.dm;21_Effects.dm;25_Powers.dm;test_map.dmm;01_Movement.dm
 LAST_COMPILE_VERSION: 504.1234
 DIR: gfx lib\deadron lib\deadron\test lib\deadron\texthandling lib\ysengrin\Math 
-FILE: 00_Main.dm
-LAST_COMPILE_TIME: 1400311911
+FILE: 01_Movement.dm
+LAST_COMPILE_TIME: 1400382303
 AUTO_FILE_DIR: ON
 */
 // END_INTERNALS

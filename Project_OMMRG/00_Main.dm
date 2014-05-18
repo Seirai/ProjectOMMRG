@@ -11,7 +11,7 @@ world
 	fps = 30		// 25 frames per second
 	icon_size = 32	// 32x32 icon size by default
 
-	view = 16		// show up to 6 tiles outward from center (13x13 view)
+	view = 6		// show up to 6 tiles outward from center (13x13 view)
 
 	mob = /mob/player;
 
