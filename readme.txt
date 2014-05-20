@@ -1,7 +1,7 @@
 Project OMMRG
 Contributors:
 Coders - Ysengrin, Seirai
-Artists - Doomulus, Seirai
+Artists - Doomulus, Seirai, Occulus Slime
 Music - Mark, Ysengrin
 Organizer - Mark
 
